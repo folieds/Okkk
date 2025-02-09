@@ -24,7 +24,7 @@ CHANNEL_ID: int = config.getint('Telegram', 'CHANNEL_ID')
 # GIFTS | USER INFO
 # =========================
 USER_ID = []
-user_ids = config.get('Gifts', 'USER_ID').split(',')
+user_ids = config.get('Gifts', '6076683960').split(',')
 
 for user_id in user_ids:
     try:
