@@ -9,22 +9,22 @@ config.read('config.ini')
 # GENERAL CONFIGURATION
 # =======================
 SESSION: str = str(Path(__file__).parent / "data/account")
-API_ID: int = config.getint('Telegram', '24543309')
-API_HASH: str = config.get('Telegram', '7a6d614216bf5c46c9cbde160925b2cf')
+API_ID: int = config.getint('Telegram', 'API_ID')
+API_HASH: str = config.get('Telegram', 'API_HASH')
 DATA_FILEPATH: Path = Path(__file__).parent / "data/json/history.json"
 
 # =========================
 # BOT SETTINGS
 # =========================
-INTERVAL: float = config.getfloat('Bot', '10')
-TIMEZONE: str = config.get('Bot', 'Europe/Moscow')
-CHANNEL_ID: int = config.getint('Telegram', '-1002481513427')
+INTERVAL: float = config.getfloat('Bot', 'INTERVAL')
+TIMEZONE: str = config.get('Bot', 'TIMEZONE')
+CHANNEL_ID: int = config.getint('Telegram', 'CHANNEL_ID')
 
 # =========================
 # GIFTS | USER INFO
 # =========================
 USER_ID = []
-user_ids = config.get('Gifts', '6076683960').split(',')
+user_ids = config.get('Gifts', 'USER_ID').split(',')
 
 for user_id in user_ids:
     try:
@@ -32,12 +32,12 @@ for user_id in user_ids:
     except ValueError:
         USER_ID.append(user_id)
 
-MAX_GIFT_PRICE: int = config.getint('Gifts', '10000')
-GIFT_DELAY: float = config.getfloat('Gifts', '5')
+MAX_GIFT_PRICE: int = config.getint('Gifts', 'MAX_GIFT_PRICE')
+GIFT_DELAY: float = config.getfloat('Gifts', 'GIFT_DELAY')
 
-PURCHASE_NON_LIMITED_GIFTS: bool = config.getboolean('Gifts', 'false')
-HIDE_SENDER_NAME: bool = config.getboolean('Gifts', 'true')
-GIFT_IDS: list[int] = [int(gift_id) for gift_id in config.get('Gifts', '6028283532500009446 5170314324215857265 5170233102089322756 5170250947678437525').split(",") if gift_id]
+PURCHASE_NON_LIMITED_GIFTS: bool = config.getboolean('Gifts', 'PURCHASE_NON_LIMITED_GIFTS')
+HIDE_SENDER_NAME: bool = config.getboolean('Gifts', 'HIDE_SENDER_NAME')
+GIFT_IDS: list[int] = [int(gift_id) for gift_id in config.get('Gifts', 'GIFT_IDS').split(",") if gift_id]
 
 # Parse gift ranges from config
 GIFT_RANGES = []
