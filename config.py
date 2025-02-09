@@ -9,8 +9,8 @@ config.read('config.ini')
 # GENERAL CONFIGURATION
 # =======================
 SESSION: str = str(Path(__file__).parent / "data/account")
-API_ID: int = config.getint('Telegram', 'API_ID')
-API_HASH: str = config.get('Telegram', 'API_HASH')
+API_ID: int = config.getint('Telegram', '24543309')
+API_HASH: str = config.get('Telegram', '7a6d614216bf5c46c9cbde160925b2cf')
 DATA_FILEPATH: Path = Path(__file__).parent / "data/json/history.json"
 
 # =========================
