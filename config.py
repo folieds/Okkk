@@ -16,9 +16,9 @@ DATA_FILEPATH: Path = Path(__file__).parent / "data/json/history.json"
 # =========================
 # BOT SETTINGS
 # =========================
-INTERVAL: float = config.getfloat('Bot', '5')
+INTERVAL: float = config.getfloat('Bot', '10')
 TIMEZONE: str = config.get('Bot', 'Europe/Moscow')
-CHANNEL_ID: int = config.getint('Telegram', 'CHANNEL_ID')
+CHANNEL_ID: int = config.getint('Telegram', '-1002481513427')
 
 # =========================
 # GIFTS | USER INFO
@@ -35,9 +35,9 @@ for user_id in user_ids:
 MAX_GIFT_PRICE: int = config.getint('Gifts', '10000')
 GIFT_DELAY: float = config.getfloat('Gifts', '5')
 
-PURCHASE_NON_LIMITED_GIFTS: bool = config.getboolean('Gifts', 'PURCHASE_NON_LIMITED_GIFTS')
+PURCHASE_NON_LIMITED_GIFTS: bool = config.getboolean('Gifts', 'false')
 HIDE_SENDER_NAME: bool = config.getboolean('Gifts', 'true')
-GIFT_IDS: list[int] = [int(gift_id) for gift_id in config.get('Gifts', 'GIFT_IDS').split(",") if gift_id]
+GIFT_IDS: list[int] = [int(gift_id) for gift_id in config.get('Gifts', '6028283532500009446 5170314324215857265 5170233102089322756 5170250947678437525').split(",") if gift_id]
 
 # Parse gift ranges from config
 GIFT_RANGES = []
